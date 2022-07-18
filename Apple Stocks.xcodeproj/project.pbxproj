@@ -15,6 +15,9 @@
 		DCADC9242885559D00C496DD /* TopStoriesNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9232885559D00C496DD /* TopStoriesNewsViewController.swift */; };
 		DCADC926288555B300C496DD /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC925288555B300C496DD /* StockDetailsViewController.swift */; };
 		DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC927288555C800C496DD /* SearchResultsViewController.swift */; };
+		DCADC92A2885619300C496DD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9292885619300C496DD /* APICaller.swift */; };
+		DCADC92C2885619F00C496DD /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92B2885619F00C496DD /* PersistanceManager.swift */; };
+		DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92D288561AE00C496DD /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		DCADC9232885559D00C496DD /* TopStoriesNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesNewsViewController.swift; sourceTree = "<group>"; };
 		DCADC925288555B300C496DD /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
 		DCADC927288555C800C496DD /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		DCADC9292885619300C496DD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		DCADC92B2885619F00C496DD /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		DCADC92D288561AE00C496DD /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 		DCADC9202885550200C496DD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				DCADC9292885619300C496DD /* APICaller.swift */,
+				DCADC92B2885619F00C496DD /* PersistanceManager.swift */,
+				DCADC92D288561AE00C496DD /* HapticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -183,12 +192,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */,
 				DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */,
 				DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */,
 				DCADC9242885559D00C496DD /* TopStoriesNewsViewController.swift in Sources */,
+				DCADC92A2885619300C496DD /* APICaller.swift in Sources */,
 				DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */,
 				DCADC926288555B300C496DD /* StockDetailsViewController.swift in Sources */,
 				DCADC90C288554BB00C496DD /* SceneDelegate.swift in Sources */,
+				DCADC92C2885619F00C496DD /* PersistanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
