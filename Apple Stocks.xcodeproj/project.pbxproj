@@ -19,6 +19,7 @@
 		DCADC92C2885619F00C496DD /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92B2885619F00C496DD /* PersistanceManager.swift */; };
 		DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92D288561AE00C496DD /* HapticsManager.swift */; };
 		DCADC9302886BA5800C496DD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92F2886BA5800C496DD /* Extension.swift */; };
+		DCADC9322886C38300C496DD /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DCADC92B2885619F00C496DD /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		DCADC92D288561AE00C496DD /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		DCADC92F2886BA5800C496DD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				DCADC914288554BF00C496DD /* LaunchScreen.storyboard */,
+				DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCADC9322886C38300C496DD /* SearchResultsTableViewCell.swift in Sources */,
 				DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */,
 				DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */,
 				DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */,
