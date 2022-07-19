@@ -65,3 +65,202 @@
     }
 
 }
+
+# Search Result & TitleView
+
+<img width="419" alt="Screen Shot 2565-07-19 at 17 24 52" src="https://user-images.githubusercontent.com/57714919/179728947-027cf1b8-88ea-439d-910e-3111ebb2ae81.png">
+
+## Setup View for WatchListViewController.swift
+
+      import UIKit
+
+      class WatchListViewController: UIViewController {
+
+          override func viewDidLoad() {
+              super.viewDidLoad()
+              // Do any additional setup after loading the view.
+              view.backgroundColor = .systemBackground
+
+              setupSearchController()
+              setupTitle()
+          }
+
+
+          private func setupTitle() {
+              let titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: navigationController?.navigationBar.height ?? 100))
+
+              let label = UILabel(frame: CGRect(x: 10, y: 0, width: titleView.width-20 , height: titleView.height))
+
+              label.text = "Stocks"
+              label.font = .systemFont(ofSize: 40, weight: .medium)
+              titleView.addSubview(label)
+
+              navigationItem.titleView = titleView
+          }
+
+          private func setupSearchController() {
+              let resultVC = SearchResultsViewController()
+              let searchVC = UISearchController(searchResultsController: resultVC)
+              searchVC.searchResultsUpdater = self
+              navigationItem.searchController = searchVC
+          }
+      }
+
+      extension WatchListViewController: UISearchResultsUpdating {
+          func updateSearchResults(for searchController: UISearchController) {
+                guard let query = searchController.searchBar.text,
+                    let resultVC = searchController.searchResultsController as? SearchResultsViewController, !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+                    return
+                }
+
+            }
+        }
+
+## Extension.swift
+
+    import Foundation
+    import UIKit
+
+    // MARK: - Framing
+
+    extension UIView {
+        /// Width of view
+        var width: CGFloat {
+            frame.size.width
+        }
+
+        /// Height of view
+        var height: CGFloat {
+            frame.size.height
+        }
+
+        /// Left edge of view
+        var left: CGFloat {
+            frame.origin.x
+        }
+
+        /// Right edge of view
+        var right: CGFloat {
+            left + width
+        }
+
+        /// Top edge of view
+        var top: CGFloat {
+            frame.origin.y
+        }
+
+        /// Bottom edge of view
+        var bottom: CGFloat {
+            top + height
+        }
+    }
+
+## Setup View for SearchResultsViewController.swift
+
+<img width="389" alt="Screen Shot 2565-07-19 at 22 56 34" src="https://user-images.githubusercontent.com/57714919/179795388-7b9ce684-98ed-41df-952d-2ba038d0efc3.png">
+
+
+    import UIKit
+
+    /// Delegate for search resutls
+    protocol SearchResultsViewControllerDelegate: AnyObject {
+        /// Notify delegate of selection
+        /// - Parameter searchResult: Result that was picked
+        func SearchResultsViewControllerDidSelect(searchResult: String)
+    }
+
+    class SearchResultsViewController: UIViewController {
+
+        weak var delegate: SearchResultsViewControllerDelegate?
+
+        private var results: [String] = []
+
+        private let tableView: UITableView = {
+            let tableView = UITableView(frame: .zero, style: .grouped)
+            tableView.register(SearchResultsTableViewCell.self, forCellReuseIdentifier: SearchResultsTableViewCell.identifier)
+            return tableView
+
+        }()
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            setupTableView()
+        }
+
+        override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            tableView.frame = view.bounds
+        }
+
+        private func setupTableView() {
+            view.addSubview(tableView)
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.contentInsetAdjustmentBehavior = .never
+
+        }
+  
+        public func update(with results: [String]) {
+            self.results = results
+            tableView.reloadData()
+        }
+    }
+
+    extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
+
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 10
+        }
+
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultsTableViewCell.identifier, for: indexPath)
+
+            cell.textLabel?.text = "AAPL"
+            cell.detailTextLabel?.text = "Apple Inc."
+
+            return cell
+        }
+
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            delegate?.SearchResultsViewControllerDidSelect(searchResult: "AAPL")
+        }
+
+    }
+
+##### Setup View for SearchResultsTableViewCell.swift
+    import UIKit
+
+    class SearchResultsTableViewCell: UITableViewCell {
+
+        static let identifier = "SearchResultsTableViewCell"
+
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+    }
+
+## Passing data from View for SearchResultsViewController.swift to WatchListViewController.swift
+We passing data when select SearchResultsTableViewCell to WatchListViewController to display details.
+
+<img width="772" alt="Screen Shot 2565-07-19 at 23 01 27" src="https://user-images.githubusercontent.com/57714919/179796479-8105ead1-77b7-4111-8195-400e6936abbf.png">
+
+<img width="940" alt="Screen Shot 2565-07-19 at 23 01 41" src="https://user-images.githubusercontent.com/57714919/179796529-359dcc87-841a-4c51-9544-de35eed10e1f.png">
+
+<img width="1149" alt="Screen Shot 2565-07-19 at 23 02 37" src="https://user-images.githubusercontent.com/57714919/179796712-2d0a438b-3e7f-429d-a57f-940b9c7b3530.png">
+
+## Passing data from View for WatchListViewController.swift to SearchResultsViewController.swift
+Passing query data to SearchResultsViewController to display search result in SearchResultsTableViewCell.
+<img width="1144" alt="Screen Shot 2565-07-19 at 23 03 59" src="https://user-images.githubusercontent.com/57714919/179797009-d02ea5a2-431b-48d4-a812-c8b70a0bbb22.png">
+
+Call update function from SearchResultsViewController.swift
+```
+resultVC.update(with: ["AAPL"])
+```
+<img width="578" alt="Screen Shot 2565-07-19 at 23 04 38" src="https://user-images.githubusercontent.com/57714919/179797139-730f5006-db2d-4f6e-bef1-4ec29757d032.png">
+
