@@ -70,7 +70,7 @@
 
 <img width="419" alt="Screen Shot 2565-07-19 at 17 24 52" src="https://user-images.githubusercontent.com/57714919/179728947-027cf1b8-88ea-439d-910e-3111ebb2ae81.png">
 
-## Search Result
+## Setup View
 
       import UIKit
 
@@ -115,6 +115,45 @@
 
             }
         }
+
+## Extension
+
+    import Foundation
+    import UIKit
+
+    // MARK: - Framing
+
+    extension UIView {
+        /// Width of view
+        var width: CGFloat {
+            frame.size.width
+        }
+
+        /// Height of view
+        var height: CGFloat {
+            frame.size.height
+        }
+
+        /// Left edge of view
+        var left: CGFloat {
+            frame.origin.x
+        }
+
+        /// Right edge of view
+        var right: CGFloat {
+            left + width
+        }
+
+        /// Top edge of view
+        var top: CGFloat {
+            frame.origin.y
+        }
+
+        /// Bottom edge of view
+        var bottom: CGFloat {
+            top + height
+        }
+    }
 
 
 
