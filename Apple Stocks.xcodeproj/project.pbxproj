@@ -18,6 +18,7 @@
 		DCADC92A2885619300C496DD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9292885619300C496DD /* APICaller.swift */; };
 		DCADC92C2885619F00C496DD /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92B2885619F00C496DD /* PersistanceManager.swift */; };
 		DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92D288561AE00C496DD /* HapticsManager.swift */; };
+		DCADC9302886BA5800C496DD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92F2886BA5800C496DD /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DCADC9292885619300C496DD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		DCADC92B2885619F00C496DD /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		DCADC92D288561AE00C496DD /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		DCADC92F2886BA5800C496DD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				DCADC912288554BF00C496DD /* Assets.xcassets */,
 				DCADC909288554BB00C496DD /* AppDelegate.swift */,
 				DCADC90B288554BB00C496DD /* SceneDelegate.swift */,
+				DCADC92F2886BA5800C496DD /* Extension.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */,
 				DCADC9242885559D00C496DD /* TopStoriesNewsViewController.swift in Sources */,
 				DCADC92A2885619300C496DD /* APICaller.swift in Sources */,
+				DCADC9302886BA5800C496DD /* Extension.swift in Sources */,
 				DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */,
 				DCADC926288555B300C496DD /* StockDetailsViewController.swift in Sources */,
 				DCADC90C288554BB00C496DD /* SceneDelegate.swift in Sources */,
