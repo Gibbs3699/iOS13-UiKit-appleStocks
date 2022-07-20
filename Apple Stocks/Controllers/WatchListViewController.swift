@@ -9,6 +9,8 @@ import UIKit
 
 class WatchListViewController: UIViewController {
 
+    private var searchtimer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,12 +49,28 @@ extension WatchListViewController: UISearchResultsUpdating {
             return
         }
         
-        resultVC.update(with: ["AAPL"])
+        searchtimer?.invalidate()
+        
+        searchtimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in
+            APICaller.shared.search(query: query) { result in
+                switch result {
+                case .success(let response):
+                    DispatchQueue.main.async {
+                        resultVC.update(with: response.result)
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        resultVC.update(with: [])
+                    }
+                    print(error)
+                }
+            }
+        })
     }
 }
 
 extension WatchListViewController: SearchResultsViewControllerDelegate {
-    func SearchResultsViewControllerDidSelect(searchResult: String) {
+    func SearchResultsViewControllerDidSelect(searchResult: SearchResult) {
         //
     }
 }
