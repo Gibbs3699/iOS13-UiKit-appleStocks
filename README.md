@@ -29,6 +29,7 @@
             case invalidURL
             case noDataReturned
         }
+<img width="1136" alt="Screen Shot 2565-07-20 at 22 49 43" src="https://user-images.githubusercontent.com/57714919/180026787-a6c00148-3006-49da-95c1-20581d9844b5.png">
 
         private func url(for endPoint: EndPoint, queryParams: [String: String] = [:]) -> URL? {
 
@@ -263,4 +264,30 @@ Call update function from SearchResultsViewController.swift
 resultVC.update(with: ["AAPL"])
 ```
 <img width="578" alt="Screen Shot 2565-07-19 at 23 04 38" src="https://user-images.githubusercontent.com/57714919/179797139-730f5006-db2d-4f6e-bef1-4ec29757d032.png">
+
+# Building Safe URL in Swift Using URLQueryItem
+Given a struct with constants to URL endpoints.
+<img width="715" alt="Screen Shot 2565-07-20 at 22 41 53" src="https://user-images.githubusercontent.com/57714919/180025141-6c0a4cd9-0b71-4ada-b29a-ec766e55b58e.png">
+
+Then create a search function that takes the query as an input, which will call the URL function to return the URL string and SearchResponse model to encode the JSON response as an object.
+
+<img width="408" alt="Screen Shot 2565-07-20 at 22 59 20" src="https://user-images.githubusercontent.com/57714919/180028695-8e162fcd-d426-4d47-85be-30af3c14eeaa.png">
+
+<img width="1160" alt="Screen Shot 2565-07-20 at 22 43 03" src="https://user-images.githubusercontent.com/57714919/180025417-176e9a7e-017f-44f5-aa6a-207e3e6d83e6.png">
+
+<img width="1104" alt="Screen Shot 2565-07-20 at 22 45 52" src="https://user-images.githubusercontent.com/57714919/180025999-0f082db0-7aca-4714-bab2-e4464565832b.png">
+
+Make the search API request in WatchListViewController.swift, and add a timer to optimize to reduce the number of searches for when user stops typing.
+
+<img width="656" alt="Screen Shot 2565-07-20 at 22 53 45" src="https://user-images.githubusercontent.com/57714919/180027500-de41d009-5e3d-4cee-aee5-beeed4ea7c9e.png">
+
+<img width="1132" alt="Screen Shot 2565-07-20 at 22 50 04" src="https://user-images.githubusercontent.com/57714919/180026839-12b9599e-fa71-42f2-ba95-a487cf40a764.png">
+
+In SearchResultsViewController.swift, change from an array of string type to SearchResult, then update tableviewcell to display the actual results from API response.
+
+```
+private var results: [SearchResult] = []
+```
+<img width="1166" alt="Screen Shot 2565-07-20 at 22 57 52" src="https://user-images.githubusercontent.com/57714919/180028383-e86d9858-e4ec-4e65-8ee1-78749065472e.png">
+
 
