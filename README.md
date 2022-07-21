@@ -294,5 +294,5 @@ private var results: [SearchResult] = []
 
 <img width="852" alt="Screen Shot 2565-07-20 at 23 11 36" src="https://user-images.githubusercontent.com/57714919/180031014-e1573e48-68a8-4573-9a82-36d9c4f71825.png">
 
-
+# Create FloatingPanel using cocopods
 
