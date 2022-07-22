@@ -294,5 +294,12 @@ private var results: [SearchResult] = []
 
 <img width="852" alt="Screen Shot 2565-07-20 at 23 11 36" src="https://user-images.githubusercontent.com/57714919/180031014-e1573e48-68a8-4573-9a82-36d9c4f71825.png">
 
+# Create FloatingPanel using cocopods
+Pod install FloatingPanel, then create setupFloatingPanel and extent WatchListViewController with FloatingPanelControllerDelegate
+delegate to set the changing state of the floating panel.
 
+<img width="733" alt="Screen Shot 2565-07-22 at 14 27 36" src="https://user-images.githubusercontent.com/57714919/180386896-92ca21a4-0833-4349-81b7-89a32a781c31.png">
 
+<img width="857" alt="Screen Shot 2565-07-22 at 14 27 54" src="https://user-images.githubusercontent.com/57714919/180386937-178055f4-b75c-4dde-adfc-85e1386bf82b.png">
+
+<img width="808" alt="Screen Shot 2565-07-22 at 14 28 05" src="https://user-images.githubusercontent.com/57714919/180386972-00d98f26-8f37-44c5-8102-a647153b426a.png">
