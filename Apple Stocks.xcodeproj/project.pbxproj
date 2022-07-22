@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37E580F73CAD7B5E00DA1EBC /* Pods_Apple_Stocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E9EE18DF0FDCBF21C5F4CF /* Pods_Apple_Stocks.framework */; };
 		DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC909288554BB00C496DD /* AppDelegate.swift */; };
 		DCADC90C288554BB00C496DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90B288554BB00C496DD /* SceneDelegate.swift */; };
 		DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90D288554BB00C496DD /* WatchListViewController.swift */; };
@@ -24,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54E9EE18DF0FDCBF21C5F4CF /* Pods_Apple_Stocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_Stocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A12DBE1C1FB8D50313A886AB /* Pods-Apple Stocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Stocks.debug.xcconfig"; path = "Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks.debug.xcconfig"; sourceTree = "<group>"; };
+		C05A884E10108BD0AB793EB9 /* Pods-Apple Stocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Stocks.release.xcconfig"; path = "Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks.release.xcconfig"; sourceTree = "<group>"; };
 		DCADC906288554BB00C496DD /* Apple Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Stocks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCADC909288554BB00C496DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCADC90B288554BB00C496DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,17 +51,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E580F73CAD7B5E00DA1EBC /* Pods_Apple_Stocks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39C3AC8AECF7D1938EEE7884 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A12DBE1C1FB8D50313A886AB /* Pods-Apple Stocks.debug.xcconfig */,
+				C05A884E10108BD0AB793EB9 /* Pods-Apple Stocks.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AEBBF8AFB2B8E7A3ADC514E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54E9EE18DF0FDCBF21C5F4CF /* Pods_Apple_Stocks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCADC8FD288554BB00C496DD = {
 			isa = PBXGroup;
 			children = (
 				DCADC908288554BB00C496DD /* Apple Stocks */,
 				DCADC907288554BB00C496DD /* Products */,
+				39C3AC8AECF7D1938EEE7884 /* Pods */,
+				AEBBF8AFB2B8E7A3ADC514E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCADC91A288554BF00C496DD /* Build configuration list for PBXNativeTarget "Apple Stocks" */;
 			buildPhases = (
+				67ED549DFB2D50D64B61F07E /* [CP] Check Pods Manifest.lock */,
 				DCADC902288554BB00C496DD /* Sources */,
 				DCADC903288554BB00C496DD /* Frameworks */,
 				DCADC904288554BB00C496DD /* Resources */,
+				B55AABA427FAB1BE0BDA61B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +222,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67ED549DFB2D50D64B61F07E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Apple Stocks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B55AABA427FAB1BE0BDA61B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCADC902288554BB00C496DD /* Sources */ = {
@@ -348,6 +417,7 @@
 		};
 		DCADC91B288554BF00C496DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A12DBE1C1FB8D50313A886AB /* Pods-Apple Stocks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -377,6 +447,7 @@
 		};
 		DCADC91C288554BF00C496DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C05A884E10108BD0AB793EB9 /* Pods-Apple Stocks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

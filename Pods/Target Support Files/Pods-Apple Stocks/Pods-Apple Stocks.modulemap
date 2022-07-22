@@ -1,0 +1,6 @@
+framework module Pods_Apple_Stocks {
+  umbrella header "Pods-Apple Stocks-umbrella.h"
+
+  export *
+  module * { export * }
+}
