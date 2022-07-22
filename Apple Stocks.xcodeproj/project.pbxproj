@@ -22,6 +22,7 @@
 		DCADC9302886BA5800C496DD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC92F2886BA5800C496DD /* Extension.swift */; };
 		DCADC9322886C38300C496DD /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */; };
 		DCADC93428881DA400C496DD /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC93328881DA400C496DD /* SearchResponse.swift */; };
+		DCADC936288A97CA00C496DD /* NewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC935288A97CA00C496DD /* NewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DCADC92F2886BA5800C496DD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		DCADC93328881DA400C496DD /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		DCADC935288A97CA00C496DD /* NewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				DCADC914288554BF00C496DD /* LaunchScreen.storyboard */,
 				DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */,
+				DCADC935288A97CA00C496DD /* NewHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				DCADC9322886C38300C496DD /* SearchResultsTableViewCell.swift in Sources */,
 				DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */,
+				DCADC936288A97CA00C496DD /* NewHeaderView.swift in Sources */,
 				DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */,
 				DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */,
 				DCADC9242885559D00C496DD /* NewsViewController.swift in Sources */,

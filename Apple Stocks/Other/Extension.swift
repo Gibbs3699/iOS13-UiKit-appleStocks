@@ -42,3 +42,14 @@ extension UIView {
     }
 }
 
+// MARK: - Add Subview
+
+extension UIView {
+    /// Adds multiple subviews
+    /// - Parameter views: Collection of subviews
+    func addSubviews(_ views: UIView...) {
+        views.forEach {
+            addSubview($0)
+        }
+    }
+}
