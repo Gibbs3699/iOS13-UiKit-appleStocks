@@ -13,7 +13,7 @@
 		DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90D288554BB00C496DD /* WatchListViewController.swift */; };
 		DCADC913288554BF00C496DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCADC912288554BF00C496DD /* Assets.xcassets */; };
 		DCADC916288554BF00C496DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCADC914288554BF00C496DD /* LaunchScreen.storyboard */; };
-		DCADC9242885559D00C496DD /* TopStoriesNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9232885559D00C496DD /* TopStoriesNewsViewController.swift */; };
+		DCADC9242885559D00C496DD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9232885559D00C496DD /* NewsViewController.swift */; };
 		DCADC926288555B300C496DD /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC925288555B300C496DD /* StockDetailsViewController.swift */; };
 		DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC927288555C800C496DD /* SearchResultsViewController.swift */; };
 		DCADC92A2885619300C496DD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9292885619300C496DD /* APICaller.swift */; };
@@ -35,7 +35,7 @@
 		DCADC912288554BF00C496DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCADC915288554BF00C496DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCADC917288554BF00C496DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCADC9232885559D00C496DD /* TopStoriesNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesNewsViewController.swift; sourceTree = "<group>"; };
+		DCADC9232885559D00C496DD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DCADC925288555B300C496DD /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
 		DCADC927288555C800C496DD /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		DCADC9292885619300C496DD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 				A12DBE1C1FB8D50313A886AB /* Pods-Apple Stocks.debug.xcconfig */,
 				C05A884E10108BD0AB793EB9 /* Pods-Apple Stocks.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				DCADC90D288554BB00C496DD /* WatchListViewController.swift */,
-				DCADC9232885559D00C496DD /* TopStoriesNewsViewController.swift */,
+				DCADC9232885559D00C496DD /* NewsViewController.swift */,
 				DCADC925288555B300C496DD /* StockDetailsViewController.swift */,
 				DCADC927288555C800C496DD /* SearchResultsViewController.swift */,
 			);
@@ -274,7 +273,7 @@
 				DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */,
 				DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */,
 				DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */,
-				DCADC9242885559D00C496DD /* TopStoriesNewsViewController.swift in Sources */,
+				DCADC9242885559D00C496DD /* NewsViewController.swift in Sources */,
 				DCADC92A2885619300C496DD /* APICaller.swift in Sources */,
 				DCADC9302886BA5800C496DD /* Extension.swift in Sources */,
 				DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */,
