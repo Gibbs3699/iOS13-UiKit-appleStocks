@@ -305,3 +305,14 @@ delegate to set the changing state of the floating panel.
 <img width="808" alt="Screen Shot 2565-07-22 at 14 28 05" src="https://user-images.githubusercontent.com/57714919/180386972-00d98f26-8f37-44c5-8102-a647153b426a.png">
 
 # Create Child Component
+
+# Date Formatter
+    // MARK: - DateFormatter
+
+    extension DateFormatter {
+        static let dateformatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-dd"
+            return formatter
+        }()
+    }
