@@ -23,6 +23,7 @@
 		DCADC9322886C38300C496DD /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */; };
 		DCADC93428881DA400C496DD /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC93328881DA400C496DD /* SearchResponse.swift */; };
 		DCADC936288A97CA00C496DD /* NewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC935288A97CA00C496DD /* NewHeaderView.swift */; };
+		DCADC938288E5E7900C496DD /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC937288E5E7900C496DD /* NewsStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		DCADC93328881DA400C496DD /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		DCADC935288A97CA00C496DD /* NewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHeaderView.swift; sourceTree = "<group>"; };
+		DCADC937288E5E7900C496DD /* NewsStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				DCADC93328881DA400C496DD /* SearchResponse.swift */,
+				DCADC937288E5E7900C496DD /* NewsStory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */,
 				DCADC928288555C800C496DD /* SearchResultsViewController.swift in Sources */,
 				DCADC9242885559D00C496DD /* NewsViewController.swift in Sources */,
+				DCADC938288E5E7900C496DD /* NewsStory.swift in Sources */,
 				DCADC92A2885619300C496DD /* APICaller.swift in Sources */,
 				DCADC9302886BA5800C496DD /* Extension.swift in Sources */,
 				DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */,

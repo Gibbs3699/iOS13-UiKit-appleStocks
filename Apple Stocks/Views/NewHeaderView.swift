@@ -8,7 +8,6 @@
 import UIKit
 
 protocol NewsHeaderViewDelegate: AnyObject {
-    
     func newsHeaderViewDidTapAddButton(_ headerView: NewsHeaderView)
 }
 
