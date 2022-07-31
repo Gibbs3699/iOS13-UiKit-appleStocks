@@ -316,3 +316,6 @@ delegate to set the changing state of the floating panel.
             return formatter
         }()
     }
+
+# News Custom Cells
+<img width="366" alt="Screen Shot 2565-07-31 at 22 56 23" src="https://user-images.githubusercontent.com/57714919/182034771-0c02c524-a679-403a-85dd-4be894abcac4.png">
