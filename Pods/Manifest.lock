@@ -1,16 +1,22 @@
 PODS:
   - FloatingPanel (2.5.3)
+  - SDWebImage (5.13.2):
+    - SDWebImage/Core (= 5.13.2)
+  - SDWebImage/Core (5.13.2)
 
 DEPENDENCIES:
   - FloatingPanel
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - FloatingPanel
+    - SDWebImage
 
 SPEC CHECKSUMS:
   FloatingPanel: 3cee815e9ded75b632543fa73ab655a1ef941452
+  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
 
-PODFILE CHECKSUM: 374eb0967baea3d9cab2e7c509ad1ba2b576a479
+PODFILE CHECKSUM: c28b192d9357ed00d1f872dd30369201d9675de2
 
 COCOAPODS: 1.11.3

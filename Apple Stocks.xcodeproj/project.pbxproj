@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37E580F73CAD7B5E00DA1EBC /* Pods_Apple_Stocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E9EE18DF0FDCBF21C5F4CF /* Pods_Apple_Stocks.framework */; };
+		DC776C672896CC0200DB9989 /* NewsStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC776C662896CC0200DB9989 /* NewsStoryTableViewCell.swift */; };
 		DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC909288554BB00C496DD /* AppDelegate.swift */; };
 		DCADC90C288554BB00C496DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90B288554BB00C496DD /* SceneDelegate.swift */; };
 		DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90D288554BB00C496DD /* WatchListViewController.swift */; };
@@ -30,6 +31,7 @@
 		54E9EE18DF0FDCBF21C5F4CF /* Pods_Apple_Stocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_Stocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12DBE1C1FB8D50313A886AB /* Pods-Apple Stocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Stocks.debug.xcconfig"; path = "Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks.debug.xcconfig"; sourceTree = "<group>"; };
 		C05A884E10108BD0AB793EB9 /* Pods-Apple Stocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Stocks.release.xcconfig"; path = "Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks.release.xcconfig"; sourceTree = "<group>"; };
+		DC776C662896CC0200DB9989 /* NewsStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryTableViewCell.swift; sourceTree = "<group>"; };
 		DCADC906288554BB00C496DD /* Apple Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Stocks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCADC909288554BB00C496DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCADC90B288554BB00C496DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				DCADC914288554BF00C496DD /* LaunchScreen.storyboard */,
 				DCADC9312886C38300C496DD /* SearchResultsTableViewCell.swift */,
 				DCADC935288A97CA00C496DD /* NewHeaderView.swift */,
+				DC776C662896CC0200DB9989 /* NewsStoryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				DCADC9242885559D00C496DD /* NewsViewController.swift in Sources */,
 				DCADC938288E5E7900C496DD /* NewsStory.swift in Sources */,
 				DCADC92A2885619300C496DD /* APICaller.swift in Sources */,
+				DC776C672896CC0200DB9989 /* NewsStoryTableViewCell.swift in Sources */,
 				DCADC9302886BA5800C496DD /* Extension.swift in Sources */,
 				DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */,
 				DCADC93428881DA400C496DD /* SearchResponse.swift in Sources */,

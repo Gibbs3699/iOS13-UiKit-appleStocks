@@ -8,5 +8,6 @@ target 'Apple Stocks' do
   # Pods for Apple Stocks
 
 pod 'FloatingPanel'
+pod 'SDWebImage'
 
 end

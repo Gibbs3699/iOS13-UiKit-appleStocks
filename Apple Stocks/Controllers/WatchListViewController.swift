@@ -29,7 +29,7 @@ class WatchListViewController: UIViewController {
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: titleView.width-20 , height: titleView.height))
         
         label.text = "Stocks"
-        label.font = .systemFont(ofSize: 40, weight: .medium)
+        label.font = .systemFont(ofSize: 40, weight: .medium) 
         titleView.addSubview(label)
         
         navigationItem.titleView = titleView

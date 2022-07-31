@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
