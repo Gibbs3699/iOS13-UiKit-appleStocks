@@ -319,3 +319,7 @@ delegate to set the changing state of the floating panel.
 
 # News Custom Cells
 <img width="366" alt="Screen Shot 2565-07-31 at 22 56 23" src="https://user-images.githubusercontent.com/57714919/182034771-0c02c524-a679-403a-85dd-4be894abcac4.png">
+
+# News ViewModels & Wire Up
+<img width="426" alt="Screen Shot 2565-08-01 at 14 57 42" src="https://user-images.githubusercontent.com/57714919/182101097-7aa22f72-7c15-4af9-9902-9334c2989e79.png">
+
