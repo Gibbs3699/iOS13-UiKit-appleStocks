@@ -31,21 +31,24 @@ class NewsStoryTableViewCell: UITableViewCell {
     private let sourceLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 14, weight: .medium)
         return label
     }()
+    
+    
     
     private let headlineLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 22)
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 14, weight: .light)
         label.textColor = .secondaryLabel
         return label
     }()

@@ -73,7 +73,17 @@ class NewsViewController: UIViewController {
     }
     
     private func fetchNews() {
-
+        APICaller.shared.news(for: .topStories) { [weak self] result in
+            switch result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    self?.stories = response
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     // to open in safari
