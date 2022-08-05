@@ -323,3 +323,8 @@ delegate to set the changing state of the floating panel.
 # News ViewModels & Wire Up
 <img width="426" alt="Screen Shot 2565-08-01 at 14 57 42" src="https://user-images.githubusercontent.com/57714919/182101097-7aa22f72-7c15-4af9-9902-9334c2989e79.png">
 
+# Open News
+<img width="419" alt="Screen Shot 2565-08-01 at 15 09 57" src="https://user-images.githubusercontent.com/57714919/182103323-256433f7-ec3b-4c80-8e71-d2ae44e738c1.png">
+
+
+
