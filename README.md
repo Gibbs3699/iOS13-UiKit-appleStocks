@@ -326,5 +326,7 @@ delegate to set the changing state of the floating panel.
 # Open News
 <img width="419" alt="Screen Shot 2565-08-01 at 15 09 57" src="https://user-images.githubusercontent.com/57714919/182103323-256433f7-ec3b-4c80-8e71-d2ae44e738c1.png">
 
+# Swipe To Delete
+<img width="427" alt="Screen Shot 2565-08-06 at 00 18 33" src="https://user-images.githubusercontent.com/57714919/183128418-7e0e7ff9-0862-48c8-bd3d-5605361e9380.png">
 
 
