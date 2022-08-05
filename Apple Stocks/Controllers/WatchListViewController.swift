@@ -13,6 +13,19 @@ class WatchListViewController: UIViewController {
     private var searchtimer: Timer?
     private var panel: FloatingPanelController?
     
+    private var watchListMap: [String : [CandleStick]] = [:]
+    
+    private var viewModels: [WatchListTableViewCell.ViewModel] = []
+    
+    static var maxChangeWidth: CGFloat = 0
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .secondarySystemBackground
+        tableView.register(WatchListTableViewCell.self, forCellReuseIdentifier: WatchListTableViewCell.identifier)
+        return tableView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,9 +33,16 @@ class WatchListViewController: UIViewController {
         
         setupSearchController()
         setupTitle()
+        setUpTableView()
         setupFloatingPanel()
+        fetchWatchListData()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
     private func setupTitle() {
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: navigationController?.navigationBar.height ?? 100))
         
@@ -50,6 +70,79 @@ class WatchListViewController: UIViewController {
         panel.set(contentViewController: vc)
         panel.addPanel(toParent: self)
         panel.track(scrollView: vc.tableView) //to have bounds interaction
+    }
+    
+    private func setUpTableView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    private func fetchWatchListData() {
+        let symbols = PersistanceManager.shared.watchList
+
+        let group = DispatchGroup()
+
+        for symbol in symbols where watchListMap[symbol] == nil {
+            group.enter()
+
+            APICaller.shared.marketData(for: symbol) { [weak self] result in
+                defer {
+                    group.leave()
+                }
+
+                switch result {
+                case .success(let data):
+                    let candleSticks = data.candleSticks
+                    self?.watchListMap[symbol] = candleSticks
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+
+        group.notify(queue: .main) { [weak self] in
+            self?.createViewModels()
+            self?.tableView.reloadData()
+        }
+    }
+    
+    private func createViewModels() {
+        var viewModels = [WatchListTableViewCell.ViewModel]()
+        
+        for (symbol, candleSticks) in watchListMap {
+            let changePercentage = getChangePercentage(from: candleSticks)
+            viewModels.append(.init(
+                symbol: symbol,
+                companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
+                price: getLastestClosingPrice(from: candleSticks),
+                changeColor: changePercentage < 0 ? .systemRed : .systemGreen,
+                changePercentage: .percentage(from: changePercentage), chartViewModel: .init(data: candleSticks.reversed().map { $0.close }, showLegend: false, showAxis: false))
+            )
+        }
+        
+        self.viewModels = viewModels
+    }
+    
+    private func getLastestClosingPrice(from data: [CandleStick]) -> String {
+        guard let closingPrice = data.first?.close else {
+            return ""
+        }
+        
+        return .formatted(number: closingPrice)
+    }
+    
+    private func getChangePercentage(from data: [CandleStick]) -> Double {
+        let lastestDate = data[0].date
+        guard let lastestClose = data.first?.close,
+              let priorClose = data.first(where: {
+                  !Calendar.current.isDate($0.date, inSameDayAs: lastestDate)
+              })?.close else {
+            return 0
+        }
+        
+        let diff = 1 - (priorClose/lastestClose)
+        return diff
     }
 }
 
@@ -98,3 +191,30 @@ extension WatchListViewController: FloatingPanelControllerDelegate {
     }
 }
 
+extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell else {
+            fatalError()
+        }
+        
+        cell.configure(with: viewModels[indexPath.row])
+        cell.delegate = self
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return WatchListTableViewCell.preferredHeight
+    }
+    
+}
+
+extension WatchListViewController: WatchListTableViewCellDelegate {
+    func didUpdateMaxWidth() {
+        tableView.reloadData()
+    }
+}

@@ -14,7 +14,7 @@ final class APICaller {
         static let apiKey = "cbbsfe2ad3ibhoa2ac2g"
         static let sandboxApiKey = "sandbox_cbbsfe2ad3ibhoa2ac30"
         static let baseURL = "https://finnhub.io/api/v1/"
-        static let date: TimeInterval = 3600*24
+        static let day: TimeInterval = 3600*24
     }
     
     private init() {}
@@ -36,7 +36,7 @@ final class APICaller {
             )
         case .company(let symbol):
             let today = Date()
-            let oneMonthBack = today.addingTimeInterval(-(Constants.date*7))
+            let oneMonthBack = today.addingTimeInterval(-(Constants.day*7))
             let url = url(
                 for: .companyNews,
                 queryParams: ["symbol": symbol,
@@ -51,6 +51,20 @@ final class APICaller {
         }
     }
     
+    public func marketData(for symbol: String, numberOfDays: TimeInterval = 7, completion: @escaping (Result<MarketDataResponse, Error>) -> Void) {
+        let today = Date().addingTimeInterval(-(Constants.day))
+        let prior = today.addingTimeInterval(-(Constants.day * numberOfDays))
+        let url = url(
+            for: .marketData,
+            queryParams: ["symbol": symbol,
+                          "resolution": "1",
+                          "from": "\(Int(prior.timeIntervalSince1970))",
+                          "to":  "\(Int(today.timeIntervalSince1970))",
+                         ]
+        )
+        
+        request(url: url, expecting: MarketDataResponse.self, completion: completion)
+    }
     
     // MARK: - Private
     
@@ -58,6 +72,7 @@ final class APICaller {
         case search
         case topStories = "news"
         case companyNews = "company-news"
+        case marketData = "stock/candle"
     }
     
     private enum APIError: Error {

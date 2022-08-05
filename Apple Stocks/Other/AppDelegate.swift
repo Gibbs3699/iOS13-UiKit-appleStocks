@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func debug() {
-        APICaller.shared.news(for: .company(symbol: "MSFT")) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        APICaller.shared.news(for: .company(symbol: "MSFT")) { result in
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
 }

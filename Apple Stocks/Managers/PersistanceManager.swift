@@ -13,8 +13,9 @@ final class PersistanceManager {
     
     private let userDefault: UserDefaults = .standard
     
-    private struct Constant {
-
+    private struct Constants {
+        static let onBoardKey = "hasOnBoard"
+        static let watchListKey = "watchList"
     }
     
     private init() {}
@@ -22,7 +23,11 @@ final class PersistanceManager {
     // MARK: - Public
     
     public var watchList: [String] {
-        return []
+        if !hasOnBoarded {
+            userDefault.set(true, forKey: Constants.onBoardKey)
+            setUpDefaults()
+        }
+        return userDefault.stringArray(forKey: Constants.watchListKey) ?? []
     }
     
     public func addToWatchList() {
@@ -36,6 +41,28 @@ final class PersistanceManager {
     // MARK: - Private
     
     private var hasOnBoarded: Bool {
-        return false
+        return userDefault.bool(forKey: Constants.onBoardKey)
+    }
+    
+    private func setUpDefaults() {
+        let map: [String: String] = [
+            "AAPL": "Apple Inc",
+            "MSFT": "Microsoft Corporation",
+            "SNAP": "Snap Inc.",
+            "GOOG": "Alphabet",
+            "AMZN": "Amazon.com, Inc.",
+            "WORK": "Slack Technologies",
+            "FB": "Facebook Inc.",
+            "NVDA": "Nvidia Inc.",
+            "NKE": "Nike",
+            "PINS": "Pinterest Inc."
+        ]
+        
+        let symbols = map.keys.map{ $0 }
+        userDefault.set(symbols, forKey: "watchList")
+        
+        for (symbol, name) in map {
+            userDefault.set(name, forKey: symbol)
+        }
     }
 }
