@@ -329,4 +329,6 @@ delegate to set the changing state of the floating panel.
 # Swipe To Delete
 <img width="427" alt="Screen Shot 2565-08-06 at 00 18 33" src="https://user-images.githubusercontent.com/57714919/183128418-7e0e7ff9-0862-48c8-bd3d-5605361e9380.png">
 
+# Create Stock Detail View
+<img width="395" alt="Screen Shot 2565-08-06 at 16 58 19" src="https://user-images.githubusercontent.com/57714919/183244080-e81624eb-d903-4899-896c-241aa04281f1.png">
 
