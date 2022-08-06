@@ -19,6 +19,8 @@ class WatchListViewController: UIViewController {
     
     static var maxChangeWidth: CGFloat = 0
     
+    private var observer: NSObjectProtocol?
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(WatchListTableViewCell.self, forCellReuseIdentifier: WatchListTableViewCell.identifier)
@@ -35,6 +37,7 @@ class WatchListViewController: UIViewController {
         setUpTableView()
         setupFloatingPanel()
         fetchWatchListData()
+        setUpObserver()
     }
 
     override func viewDidLayoutSubviews() {
@@ -143,6 +146,17 @@ class WatchListViewController: UIViewController {
         let diff = 1 - (priorClose/lastestClose)
         return diff
     }
+    
+    private func setUpObserver() {
+        observer = NotificationCenter.default.addObserver(
+            forName: .didAddToWatchList,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.viewModels.removeAll()
+            self?.fetchWatchListData()
+        }
+    }
 }
 
 extension WatchListViewController: UISearchResultsUpdating {
@@ -177,7 +191,7 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
         // to dismiss the keyboard
         navigationItem.searchController?.searchBar.resignFirstResponder()
         
-        let vc = StockDetailsViewController()
+        let vc = StockDetailsViewController(symbol: searchResult.displaySymbol, companyName: searchResult.description)
         let navVC = UINavigationController(rootViewController: vc)
         vc.title = searchResult.description
         present(navVC, animated: true)
@@ -225,6 +239,19 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModel = viewModels[indexPath.row]
+
+        let vc = StockDetailsViewController(
+            symbol: viewModel.symbol,
+            companyName: viewModel.companyName,
+            candleStickData: watchListMap[viewModel.symbol] ?? []
+        )
+        vc.title =  viewModel.companyName
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true)
     }
     
 }

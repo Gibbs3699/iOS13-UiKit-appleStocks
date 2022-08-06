@@ -34,7 +34,7 @@ class NewsViewController: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .secondarySystemBackground
         tableView.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
         tableView.register(NewsStoryTableViewCell.self, forCellReuseIdentifier: NewsStoryTableViewCell.identifier)
         return tableView
@@ -116,6 +116,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.configure(with: .init(model: stories[indexPath.row]))
+        cell.backgroundColor = .secondarySystemBackground
         return cell
         
     }
@@ -145,7 +146,12 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             return nil
         }
         
-        header.configure(with: .init(title: self.type.title, shouldShowAddButton: true))
+        header.configure(
+            with: .init(
+                title: self.type.title,
+                shouldShowAddButton: false
+            )
+        )
         
         return header
     }

@@ -111,7 +111,7 @@ extension String {
     }
 }
 
-// ImageView
+// MARK: - UIImageView
 
 extension UIImageView {
     /// Sets image from remote url
@@ -133,4 +133,10 @@ extension UIImageView {
             task.resume()
         }
     }
+}
+
+// MARK: - Notification
+
+extension Notification.Name {
+    static let didAddToWatchList = Notification.Name("didAddToWatchList")
 }
