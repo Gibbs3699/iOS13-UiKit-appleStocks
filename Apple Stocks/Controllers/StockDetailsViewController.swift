@@ -49,6 +49,7 @@ class StockDetailsViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setUpTableView()
         fetchNews()
+        fetchFinancialData()
         setUpClostButton()
     }
     
@@ -80,6 +81,43 @@ class StockDetailsViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    private func fetchFinancialData() {
+        let group = DispatchGroup()
+        
+        group.enter()
+        APICaller.shared.financialMetrics(for: symbol) { [weak self] result in
+            defer {
+                group.leave()
+            }
+            switch result {
+            case.success(let response):
+                let metrics = response.metric
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        group.notify(queue: .main) { [weak self] in
+            self?.renderChart()
+        }
+    }
+    
+    private func renderChart() {
+        let headerView = StockDetailHeaderView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: view.width,
+                height: (view.width * 0.7) + 100
+            )
+        )
+        
+        headerView.backgroundColor = .link
+        
+        tableView.tableHeaderView = headerView
+    
     }
     
     private func setUpClostButton() {
@@ -115,6 +153,10 @@ extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return NewsStoryTableViewCell.preferredHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return NewsHeaderView.preferredHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

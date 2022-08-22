@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        debug()
+//        debug()
         
         return true
     }
@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func debug() {
-//        APICaller.shared.news(for: .company(symbol: "MSFT")) { result in
-//            switch result {
-//            case .success(let response):
-//                print(response)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        APICaller.shared.financialMetrics(for: "MSFT") { result in
+            switch result {
+            case .success(let response):
+                print("PPPP debug response ---> \(response)")
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
