@@ -14,7 +14,7 @@
 		DC776C9B28991D9400DB9989 /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC776C9A28991D9400DB9989 /* MarketDataResponse.swift */; };
 		DC776C9D2899230D00DB9989 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC776C9C2899230D00DB9989 /* WatchListTableViewCell.swift */; };
 		DC776CA12899241D00DB9989 /* StockChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC776CA02899241D00DB9989 /* StockChartView.swift */; };
-		DC82D83028B3808B006A14A9 /* MetricCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82D82F28B3808B006A14A9 /* MetricCollectionViewCell.swift */; };
+		DC82D83228B38214006A14A9 /* MetricCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82D83128B38214006A14A9 /* MetricCollectionViewCell.swift */; };
 		DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC909288554BB00C496DD /* AppDelegate.swift */; };
 		DCADC90C288554BB00C496DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90B288554BB00C496DD /* SceneDelegate.swift */; };
 		DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90D288554BB00C496DD /* WatchListViewController.swift */; };
@@ -43,7 +43,7 @@
 		DC776C9A28991D9400DB9989 /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 		DC776C9C2899230D00DB9989 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		DC776CA02899241D00DB9989 /* StockChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChartView.swift; sourceTree = "<group>"; };
-		DC82D82F28B3808B006A14A9 /* MetricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC82D83128B38214006A14A9 /* MetricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCollectionViewCell.swift; sourceTree = "<group>"; };
 		DCADC906288554BB00C496DD /* Apple Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Stocks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCADC909288554BB00C496DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCADC90B288554BB00C496DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				DC776C9C2899230D00DB9989 /* WatchListTableViewCell.swift */,
 				DC776CA02899241D00DB9989 /* StockChartView.swift */,
 				DC3F1AA7289FAC3C0020CA17 /* StockDetailHeaderView.swift */,
-				DC82D82F28B3808B006A14A9 /* MetricCollectionViewCell.swift */,
+				DC82D83128B38214006A14A9 /* MetricCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 			files = (
 				DC776C9B28991D9400DB9989 /* MarketDataResponse.swift in Sources */,
 				DCADC9322886C38300C496DD /* SearchResultsTableViewCell.swift in Sources */,
-				DC82D83028B3808B006A14A9 /* MetricCollectionViewCell.swift in Sources */,
+				DC82D83228B38214006A14A9 /* MetricCollectionViewCell.swift in Sources */,
 				DCADC92E288561AE00C496DD /* HapticsManager.swift in Sources */,
 				DCADC936288A97CA00C496DD /* NewHeaderView.swift in Sources */,
 				DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */,
