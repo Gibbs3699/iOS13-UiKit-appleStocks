@@ -72,3 +72,5 @@ class StockChartView: UIView {
         chartView.data = data
     }
 }
+
+

@@ -17,7 +17,14 @@ final class HapticsManager {
     // MARK: - Public
     
     public func vibrateFromSelection() {
-        
+        let generator = UISelectionFeedbackGenerator()
+        generator.prepare()
+        generator.selectionChanged()
     }
 
+    public func vibrate(for type: UINotificationFeedbackGenerator.FeedbackType) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
+        generator.notificationOccurred(type)
+    }
 }

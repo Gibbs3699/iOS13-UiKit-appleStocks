@@ -191,6 +191,8 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
         // to dismiss the keyboard
         navigationItem.searchController?.searchBar.resignFirstResponder()
         
+        HapticsManager.shared.vibrateFromSelection()
+        
         let vc = StockDetailsViewController(symbol: searchResult.displaySymbol, companyName: searchResult.description)
         let navVC = UINavigationController(rootViewController: vc)
         vc.title = searchResult.description
@@ -242,6 +244,10 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        HapticsManager.shared.vibrateFromSelection()
+        
         let viewModel = viewModels[indexPath.row]
 
         let vc = StockDetailsViewController(
