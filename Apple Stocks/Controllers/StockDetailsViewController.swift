@@ -88,6 +88,23 @@ class StockDetailsViewController: UIViewController {
     private func fetchFinancialData() {
         let group = DispatchGroup()
         
+        if candleStickData.isEmpty {
+            group.enter()
+            APICaller.shared.marketData(for: symbol) { [weak self] result in
+                defer {
+                    group.leave()
+                }
+
+                switch result {
+                case .success(let response):
+                    self?.candleStickData = response.candleSticks
+                    print("PPPP check result: \(response.candleSticks)")
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
         group.enter()
         APICaller.shared.financialMetrics(for: symbol) { [weak self] result in
             defer {
@@ -117,8 +134,6 @@ class StockDetailsViewController: UIViewController {
             )
         )
         
-        headerView.backgroundColor = .link
-        
         var viewModels = [MetricCollectionViewCell.ViewModel]()
         if let metrics = metrics {
             viewModels.append(.init(name: "52W High", value: "\(metrics.AnnualWeekHigh)"))
@@ -128,8 +143,9 @@ class StockDetailsViewController: UIViewController {
             viewModels.append(.init(name: "10D Vol.", value: "\(metrics.TenDayAverageTradingVolume)"))
         }
         
+        let change = candleStickData.getPercentage()
         headerView.configure(
-            chartViewModel: .init(data: [], showLegend: false, showAxis: false),
+            chartViewModel: .init(data: candleStickData.reversed().map { $0.close }, showLegend: false, showAxis: false, fillColor: change < 0 ? .systemRed : .systemGreen),
             metricViewModel: viewModels
         )
         
