@@ -32,7 +32,6 @@ final class PersistanceManager {
     
     public func addToWatchList(symbol: String, companyName: String) {
         var current = watchList
-        print("PPPP current watchlist ---> \(current)")
         
         current.append(symbol)
         userDefault.set(current, forKey: Constants.watchListKey)

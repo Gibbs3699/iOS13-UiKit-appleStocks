@@ -15,6 +15,7 @@
 		DC776C9D2899230D00DB9989 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC776C9C2899230D00DB9989 /* WatchListTableViewCell.swift */; };
 		DC776CA12899241D00DB9989 /* StockChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC776CA02899241D00DB9989 /* StockChartView.swift */; };
 		DC82D83228B38214006A14A9 /* MetricCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82D83128B38214006A14A9 /* MetricCollectionViewCell.swift */; };
+		DC82D85228B61BB6006A14A9 /* Apple_StocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82D85128B61BB6006A14A9 /* Apple_StocksTests.swift */; };
 		DCADC90A288554BB00C496DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC909288554BB00C496DD /* AppDelegate.swift */; };
 		DCADC90C288554BB00C496DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90B288554BB00C496DD /* SceneDelegate.swift */; };
 		DCADC90E288554BB00C496DD /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC90D288554BB00C496DD /* WatchListViewController.swift */; };
@@ -33,6 +34,16 @@
 		DCADC938288E5E7900C496DD /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCADC937288E5E7900C496DD /* NewsStory.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC82D85328B61BB6006A14A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCADC8FE288554BB00C496DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCADC905288554BB00C496DD;
+			remoteInfo = "Apple Stocks";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		54E9EE18DF0FDCBF21C5F4CF /* Pods_Apple_Stocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_Stocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12DBE1C1FB8D50313A886AB /* Pods-Apple Stocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Stocks.debug.xcconfig"; path = "Target Support Files/Pods-Apple Stocks/Pods-Apple Stocks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +55,8 @@
 		DC776C9C2899230D00DB9989 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		DC776CA02899241D00DB9989 /* StockChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChartView.swift; sourceTree = "<group>"; };
 		DC82D83128B38214006A14A9 /* MetricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC82D84F28B61BB6006A14A9 /* Apple StocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apple StocksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC82D85128B61BB6006A14A9 /* Apple_StocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_StocksTests.swift; sourceTree = "<group>"; };
 		DCADC906288554BB00C496DD /* Apple Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Stocks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCADC909288554BB00C496DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCADC90B288554BB00C496DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +78,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DC82D84C28B61BB6006A14A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCADC903288554BB00C496DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,10 +113,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC82D85028B61BB6006A14A9 /* Apple StocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC82D85128B61BB6006A14A9 /* Apple_StocksTests.swift */,
+			);
+			path = "Apple StocksTests";
+			sourceTree = "<group>";
+		};
 		DCADC8FD288554BB00C496DD = {
 			isa = PBXGroup;
 			children = (
 				DCADC908288554BB00C496DD /* Apple Stocks */,
+				DC82D85028B61BB6006A14A9 /* Apple StocksTests */,
 				DCADC907288554BB00C496DD /* Products */,
 				39C3AC8AECF7D1938EEE7884 /* Pods */,
 				AEBBF8AFB2B8E7A3ADC514E3 /* Frameworks */,
@@ -107,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DCADC906288554BB00C496DD /* Apple Stocks.app */,
+				DC82D84F28B61BB6006A14A9 /* Apple StocksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +215,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DC82D84E28B61BB6006A14A9 /* Apple StocksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC82D85528B61BB6006A14A9 /* Build configuration list for PBXNativeTarget "Apple StocksTests" */;
+			buildPhases = (
+				DC82D84B28B61BB6006A14A9 /* Sources */,
+				DC82D84C28B61BB6006A14A9 /* Frameworks */,
+				DC82D84D28B61BB6006A14A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC82D85428B61BB6006A14A9 /* PBXTargetDependency */,
+			);
+			name = "Apple StocksTests";
+			productName = "Apple StocksTests";
+			productReference = DC82D84F28B61BB6006A14A9 /* Apple StocksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DCADC905288554BB00C496DD /* Apple Stocks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCADC91A288554BF00C496DD /* Build configuration list for PBXNativeTarget "Apple Stocks" */;
@@ -214,6 +262,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					DC82D84E28B61BB6006A14A9 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = DCADC905288554BB00C496DD;
+					};
 					DCADC905288554BB00C496DD = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -233,11 +285,19 @@
 			projectRoot = "";
 			targets = (
 				DCADC905288554BB00C496DD /* Apple Stocks */,
+				DC82D84E28B61BB6006A14A9 /* Apple StocksTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DC82D84D28B61BB6006A14A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCADC904288554BB00C496DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +352,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DC82D84B28B61BB6006A14A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC82D85228B61BB6006A14A9 /* Apple_StocksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCADC902288554BB00C496DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +390,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DC82D85428B61BB6006A14A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCADC905288554BB00C496DD /* Apple Stocks */;
+			targetProxy = DC82D85328B61BB6006A14A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DCADC914288554BF00C496DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -334,6 +410,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DC82D85628B61BB6006A14A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9786TSAYF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kamonpan.Apple-StocksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Apple Stocks.app/Apple Stocks";
+			};
+			name = Debug;
+		};
+		DC82D85728B61BB6006A14A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9786TSAYF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kamonpan.Apple-StocksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Apple Stocks.app/Apple Stocks";
+			};
+			name = Release;
+		};
 		DCADC918288554BF00C496DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -513,6 +625,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DC82D85528B61BB6006A14A9 /* Build configuration list for PBXNativeTarget "Apple StocksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC82D85628B61BB6006A14A9 /* Debug */,
+				DC82D85728B61BB6006A14A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DCADC901288554BB00C496DD /* Build configuration list for PBXProject "Apple Stocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
